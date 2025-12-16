@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scripture Memory</title>
+
+  <link rel="stylesheet" href="vendor/jquery.mobile-1.4.5.css">
+  <link rel="stylesheet" href="css/app.css">
+
+  <!-- IMPORTANT: use jQuery 1.x with jQM 1.4.5 -->
+  <script src="vendor/jquery-1.11.1.min.js"></script>
+  <script src="vendor/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" id="home">
+  <div data-role="header">
+    <h1>Scripture Memory</h1>
+  </div>
+
+  <div role="main" class="ui-content">
+
+   <select id="lang-select" data-role="none">
+  <option value="am" selected>አማርኛ</option>
+  <option value="or">Oromiffa</option>
+  <option value="en">English</option>
+</select>
+
+<!-- ================= AMHARIC ================= -->
+<div class="lang-content" data-lang="am">
+  <div data-role="tabs" id="tabs-am">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#ass-am" class="ui-btn-active">አምስቱ ዋስትናዎች</a></li>
+        <li><a href="#v60-am">60 ጥቅሶች</a></li>
+       
+      </ul>
+    </div>
+
+    <div id="ass-am" class="ui-body-d ui-content" data-src="5-assurance/am/index.html"></div>
+    <div id="v60-am" class="ui-body-d ui-content" data-src="60-verses/am/index.html"></div>
+    <div id="v242-am" class="ui-body-d ui-content" data-src="242-verses/am/index.html"></div>
+  </div>
+</div>
+
+<!-- ================= OROMIFFA ================= -->
+<div class="lang-content" data-lang="or" style="display:none;">
+  <div data-role="tabs" id="tabs-or">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#ass-or" class="ui-btn-active">Mirkaneessitoota Shan</a></li>
+        <li><a href="#v60-or">60 Verses</a></li>
+        <li><a href="#v242-or">DEP 242</a></li>
+      </ul>
+    </div>
+
+    <div id="ass-or" class="ui-body-d ui-content" data-src="5-assurance/or/index.html"></div>
+    <div id="v60-or" class="ui-body-d ui-content" data-src="60-verses/or/index.html"></div>
+    <div id="v242-or" class="ui-body-d ui-content" data-src="242-verses/or/index.html"></div>
+  </div>
+</div>
+
+<!-- ================= ENGLISH ================= -->
+<div class="lang-content" data-lang="en" style="display:none;">
+  <div data-role="tabs" id="tabs-en">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#ass-en" class="ui-btn-active">The Five Assurances</a></li>
+        <li><a href="#v60-en">60 Verses</a></li>
+        <li><a href="#v242-en">DEP 242</a></li>
+      </ul>
+    </div>
+
+    <div id="ass-en" class="ui-body-d ui-content" data-src="5-assurance/en/index.html"></div>
+    <div id="v60-en" class="ui-body-d ui-content" data-src="60-verses/en/index.html"></div>
+    <div id="v242-en" class="ui-body-d ui-content" data-src="242-verses/en/index.html"></div>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+</body>
+</html>

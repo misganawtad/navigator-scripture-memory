@@ -1,0 +1,66 @@
+/* ===============================
+   Global tweaks
+================================ */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===============================
+   Language selector
+================================ */
+
+#lang-select {
+  margin: 10px 0 20px;
+  padding: 6px 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 250px;
+}
+
+/* ===============================
+   Language blocks
+================================ */
+
+.lang-content {
+  width: 100%;
+}
+
+/* Hidden languages */
+.lang-content[style*="display:none"] {
+  display: none !important;
+}
+
+/* ===============================
+   Tabs + content spacing
+================================ */
+
+.ui-tabs {
+  margin-top: 10px;
+}
+
+.ui-content {
+  padding: 10px;
+}
+
+/* ===============================
+   Collapsible styling
+================================ */
+
+.ui-collapsible-heading {
+  font-size: 16px;
+}
+
+.ui-collapsible-content {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ===============================
+   Paragraph spacing
+================================ */
+
+p {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
