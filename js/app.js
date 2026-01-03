@@ -16,20 +16,28 @@ $(document).on("pagecreate", "#home", function () {
     });
   }
 
-  // --- ADD THIS COPY LOGIC START ---
+ // --- UPDATED COPY LOGIC ---
   $(document).on("click", ".copy-btn", function(e) {
     e.preventDefault();
     var $btn = $(this);
     var $container = $btn.closest('[data-role="collapsible"]');
     
-    // Find the H3 (ignoring the jQuery Mobile collapse icon text if present)
-    var title = $container.find("h3").first().text().trim();
+    // We target the anchor tag inside H3 which JQM creates, 
+    // and grab ONLY the first piece of text (the verse title)
+    var title = $container.find("h3 a").contents().filter(function() {
+      return this.nodeType === 3; // Filter for text nodes only
+    }).text().trim();
+
+    // If the above fails (depends on JQM version), this is a reliable fallback:
+    if(!title) {
+        title = $container.find("h3").first().text().replace(/click to (collapse|expand) contents/gi, "").trim();
+    }
+
     var content = $container.find("p").first().text().trim();
     
     var fullText = title + "\n" + content;
 
     navigator.clipboard.writeText(fullText).then(function() {
-      // Visual feedback
       var originalText = $btn.text();
       $btn.text("Copied!").addClass("ui-state-disabled");
       
@@ -38,7 +46,7 @@ $(document).on("pagecreate", "#home", function () {
       }, 2000);
     });
   });
-  // --- ADD THIS COPY LOGIC END ---
+  // --- end of copy logic ---
 
   function showLanguage(lang) {
     $langBlocks.hide();
