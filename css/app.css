@@ -60,6 +60,14 @@ body {
    Paragraph spacing
 ================================ */
 
+.ui-collapsible-heading .ui-btn {
+    white-space: normal !important;
+    text-align: left;
+    line-height: 1.4;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
 p {
   margin-top: 8px;
   margin-bottom: 8px;
